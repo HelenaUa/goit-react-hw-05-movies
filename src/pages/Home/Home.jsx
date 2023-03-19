@@ -21,6 +21,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchMovieRating();
+     // eslint-disable-next-line
   }, []);
 
   // useEffect(() => {

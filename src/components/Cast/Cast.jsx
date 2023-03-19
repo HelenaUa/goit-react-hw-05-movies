@@ -22,7 +22,7 @@ export default function Cast() {
 
     useEffect(() => {
         fetchCast();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line
     }, [movieId]);
 
     return (

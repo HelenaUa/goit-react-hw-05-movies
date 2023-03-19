@@ -56,6 +56,7 @@ const Movies = () => {
       return;
     }
     fetchMovieSearchByName(productName);
+     // eslint-disable-next-line
   }, [data, productName]);
   
   useEffect(() => {

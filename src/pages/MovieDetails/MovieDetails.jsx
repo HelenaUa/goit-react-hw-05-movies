@@ -29,7 +29,7 @@ const MovieDetails = () => {
     //   return;
     // }
     fetchFullInfoMovie();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+     // eslint-disable-next-line
   }, [movieId]);
 
   // useEffect(() => {
