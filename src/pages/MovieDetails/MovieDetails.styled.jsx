@@ -1,9 +1,11 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const ButtonBack = styled.button`
+export const ButtonBackLink = styled(NavLink)`
+text-decoration: none;
+color: black;
 padding: 4px;
-margin: 25px 15px;
- &.active {
-   color: orangered;
-   background-color: white;
+margin: 30px 15px;
+:hover {
+        color:orangered;
   }`

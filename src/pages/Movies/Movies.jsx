@@ -71,7 +71,7 @@ const Movies = () => {
 
   return (
     <div> 
-      <div>
+      
         <StyledForm formSubmit={formSubmit}>
           <StyledInput type="text"
                     name="name"
@@ -86,7 +86,7 @@ const Movies = () => {
         <ListStyled>
           <GalleryMovies data={data}/>
         </ListStyled>
-      </div>
+      
 
       {/* <div>
       {['dog-1', 'dog-2', 'dog-3', 'dog-4', 'dog-5'].map(dog => {

@@ -6,7 +6,10 @@ margin: 0 auto;
 padding: 0 16px;`
 
 export const StyledHeader = styled.header`
-padding-left: 25px;`
+display: flex;
+padding-left: 25px;
+margin-bottom: 16px;
+border-bottom: 1px solid black`
 
 export const StyledNav = styled.nav`
 display: flex;
@@ -17,7 +20,6 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
-  text-decoration: none;
   color: black;
   font-weight: 500;
   &.active {
