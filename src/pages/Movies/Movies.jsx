@@ -1,5 +1,4 @@
 // import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
@@ -25,18 +24,12 @@ const Movies = () => {
   } catch (error) {
   console.log(error);
   }
-  }
+  };
 
   const handleChange = (event) => {
         setName(event.currentTarget.value)
   };
   
-  // const onSubmit = (data) => {
-  //   setName(data);
-  //   // setPerPage(12);
-  //   // setPage(1);
-  // };
-
   const formSubmit = (event) => {
         event.preventDefault();
 
@@ -47,8 +40,6 @@ const Movies = () => {
 
         fetchMovieSearchByName(productName);
         setName('');
-        // onSubmit(name);
-        // setName('');
   };
   
   useEffect(() => {
@@ -87,16 +78,6 @@ const Movies = () => {
           <GalleryMovies data={data}/>
         </ListStyled>
       
-
-      {/* <div>
-      {['dog-1', 'dog-2', 'dog-3', 'dog-4', 'dog-5'].map(dog => {
-        return (
-          <Link key={dog} to={`${dog}`}>
-            {dog}
-          </Link>
-        );
-      })}
-      </div> */}
     </div>
     
   );

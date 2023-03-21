@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { StyledReviews } from './Reviews.styled';
 
 
 export default function Reviews() {
@@ -27,10 +28,10 @@ export default function Reviews() {
 
     return (
         reviews.map(item => (
-            <div key={item.author}>
+            <StyledReviews key={item.author}>
                 <h3>{item.author}</h3>
                 <p>{item.content}</p>
-            </div>
+            </StyledReviews>
         ))
     ); 
     

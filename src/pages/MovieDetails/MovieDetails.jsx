@@ -2,16 +2,13 @@
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ButtonBackLink } from './MovieDetails.styled';
+import { ButtonBackLink, StyledImgMovie, StyledCardMovie, StyledGenreMovie } from './MovieDetails.styled';
 
 
 const MovieDetails = () => {
 
   const { movieId } = useParams();
-  // console.log(movieId);
-  const [movie, setMovie] = useState([]);
-  // const [data, setData] = useState([]);
-  // console.log(data);
+  const [movie, setMovie] = useState(null);
   const location = useLocation();
   const goBackLink = location.state?.from ?? "/";
 
@@ -24,14 +21,9 @@ const MovieDetails = () => {
       console.log(error);
     }
   };
-  // console.log(fetchFullInfoMovie ());
-
+  
   useEffect(() => {
-    // if (data === []) {
-    //   return;
-    // }
     fetchFullInfoMovie();
-    // setData(movieId);
      // eslint-disable-next-line
   }, [movieId]);
 
@@ -40,23 +32,28 @@ const MovieDetails = () => {
   // }, [])
 
   return (
-    <>
+    <div>{ movie !== null &&
+    <div>
       <ButtonBackLink to={goBackLink}>Go back</ButtonBackLink>
       {/* <p>MovieDetails: {movieId}</p> */}
-      <div>
-        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.original_title} />
-        {/* console.log(${movie.poster_path}); */}
+      <StyledCardMovie>
+        <StyledImgMovie src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.original_title} />
         <div>
           <h2>{movie.original_title}</h2>
           <p>User score: {movie.vote_average}%</p>
           <h3>Overview</h3>
           <p>{movie.overview}</p>
           <h3>Genres</h3>
-          <p>
-            {movie.genres}
-          </p>
+          <StyledGenreMovie>
+             {movie.genres.map(genre => (
+                        <span key={genre.name}>
+                            {genre.name}
+                        </span>
+              )
+              )}
+          </StyledGenreMovie>
         </div>
-      </div>
+      </StyledCardMovie>
 
       <div>
          <p>Additional information</p>
@@ -71,7 +68,11 @@ const MovieDetails = () => {
       <Outlet />
       </div>
       
-    </>
+      </div>
+        
+    }
+</div>
+    
   );
 };
 

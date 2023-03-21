@@ -13,9 +13,6 @@ const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 export const App = () => {
 
-  // const KEY = `faab19b092cac6c59a97dec233a38f4d`;
-  // const BASE_URL = `https://api.themoviedb.org/3/trending/movie/day?`;
-
   return (
     <div>
 

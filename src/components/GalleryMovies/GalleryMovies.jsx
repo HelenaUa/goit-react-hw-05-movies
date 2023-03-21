@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-// import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { StyledMovie, StyledLink, StyledImg } from "./GalleryMovies.styled";
 
 
@@ -16,4 +16,8 @@ export default function GalleryMovies({data}) {
             </StyledMovie>
 ))
     )
+};
+
+GalleryMovies.propTypes = {
+    data: PropTypes.array,
 };
