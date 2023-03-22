@@ -7,9 +7,16 @@ padding: 0 16px;`
 
 export const StyledHeader = styled.header`
 display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 12px;
 padding-left: 25px;
 margin-bottom: 16px;
-border-bottom: 1px solid black`
+border-bottom: 1px solid black;
+
+> nav {
+    display: flex;
+  }`
 
 export const StyledNav = styled.nav`
 display: flex;

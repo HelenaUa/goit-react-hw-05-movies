@@ -27,13 +27,18 @@ export default function Cast() {
     }, [movieId]);
 
     return (
-        cast.map(item => (
+        <ul>
+            { cast.length > 0 ?
+            cast.map(item => (
             <div key={item.id}>
                 <StyledImgCast src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`} alt={item.character} />
                 <p>{item.original_name}</p>
                 <p>Character: {item.character}</p>
             </div>
-        ))
+         ))  
+         :"Sorry, we don't have any cast for this movie"        
+         }
+        </ul>
     );
 
 }; 

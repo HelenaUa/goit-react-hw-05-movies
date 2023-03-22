@@ -10,7 +10,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const goBackLink = location.state?.from ?? "/";
+  const goBackLink = location?.state?.from ?? "/";
 
   const KEY = `faab19b092cac6c59a97dec233a38f4d`;
 

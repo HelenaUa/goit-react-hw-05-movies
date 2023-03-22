@@ -27,12 +27,17 @@ export default function Reviews() {
     }, [movieId]);
 
     return (
-        reviews.map(item => (
+        <ul>
+            { reviews.length > 0 ?
+            reviews.map(item => (
             <StyledReviews key={item.author}>
                 <h3>{item.author}</h3>
                 <p>{item.content}</p>
             </StyledReviews>
-        ))
+            ))
+            :"Sorry, we don't have any review for this movie"
+            }
+        </ul>
     ); 
     
 };
