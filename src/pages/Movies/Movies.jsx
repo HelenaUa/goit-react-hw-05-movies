@@ -48,13 +48,14 @@ const Movies = () => {
     }
     fetchMovieSearchByName(productName);
      // eslint-disable-next-line
-  }, [data, productName]);
+  }, []);
   
   useEffect(() => {
     if (productName === '') {
       setSearchParams({})
     }
-  }, [productName,setSearchParams]);
+    // eslint-disable-next-line
+  }, [productName]);
 
   // useEffect(() => {
   // HTTP запрос, если нужно

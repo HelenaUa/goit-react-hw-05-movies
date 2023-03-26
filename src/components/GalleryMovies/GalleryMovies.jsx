@@ -14,7 +14,7 @@ export default function GalleryMovies({data}) {
                 <h4>{item.title}</h4>
                 </StyledLink>
             </StyledMovie>
-))
+        ))
     )
 };
 

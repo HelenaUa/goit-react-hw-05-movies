@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const StyledMovie = styled.li`
-width: 240px;
-display:flex;
+width: 210px;
+display: flex;
 flex-direction: column;`
 
 export const StyledLink = styled(Link)`

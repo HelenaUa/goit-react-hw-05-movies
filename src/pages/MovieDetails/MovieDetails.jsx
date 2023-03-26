@@ -31,7 +31,7 @@ const MovieDetails = () => {
   // HTTP запрос, если нужно
   // }, [])
 
-  return (
+  return ( 
     <div>{ movie !== null &&
     <div>
       <ButtonBackLink to={goBackLink}>Go back</ButtonBackLink>
@@ -40,7 +40,7 @@ const MovieDetails = () => {
         <StyledImgMovie src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.original_title} />
         <div>
           <h2>{movie.original_title}</h2>
-          <p>User score: {movie.vote_average}%</p>
+          <p>User score: {movie.vote_average.toFixed(0)*10}%</p>
           <h3>Overview</h3>
           <p>{movie.overview}</p>
           <h3>Genres</h3>
@@ -59,10 +59,10 @@ const MovieDetails = () => {
          <p>Additional information</p>
       <ul>
         <li>
-          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+          <Link to={`/movies/${movieId}/cast`} state={location.state}>Cast</Link>
         </li>
         <li>
-          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+          <Link to={`/movies/${movieId}/reviews`} state={location.state}>Reviews</Link>
         </li>
       </ul>
       <Outlet />
@@ -71,7 +71,7 @@ const MovieDetails = () => {
       </div>
         
     }
-</div>
+    </div>
     
   );
 };
