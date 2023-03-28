@@ -8,11 +8,12 @@ flex-direction: column;`
 
 export const StyledLink = styled(Link)`
 text-decoration: none;
-display:block;
-color:black;
+display: block;
+color: black;
     :hover {
-        color:orangered;
+        color: orangered;
     }`
 
 export const StyledImg = styled.img`
-width:100%;`
+width: 100%;
+height: 320px;`

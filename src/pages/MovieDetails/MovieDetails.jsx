@@ -3,6 +3,7 @@ import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ButtonBackLink, StyledImgMovie, StyledCardMovie, StyledGenreMovie } from './MovieDetails.styled';
+import noImage from '../../image/no_image.png';
 
 
 const MovieDetails = () => {
@@ -37,7 +38,9 @@ const MovieDetails = () => {
       <ButtonBackLink to={goBackLink}>Go back</ButtonBackLink>
       {/* <p>MovieDetails: {movieId}</p> */}
       <StyledCardMovie>
-        <StyledImgMovie src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.original_title} />
+          <StyledImgMovie
+            src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : noImage}
+            alt={movie.original_title} />
         <div>
           <h2>{movie.original_title}</h2>
           <p>User score: {movie.vote_average.toFixed(0)*10}%</p>
